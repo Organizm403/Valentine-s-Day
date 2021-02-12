@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Valentine's Day</title> 
+<style> 
+body { 
+position: relative; 
+font-size: 16px; 
+padding: 0px; 
+margin: 0px; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+width: 100vw; 
+height: 100vh; 
+background: #ffffff; 
+color: rgb(194, 156, 156); 
+} 
+.postcard { 
+display: block; 
+position: relative; 
+margin: 0px; 
+padding: 0px; 
+
+background: rgb(223, 230, 185); 
+} 
+.background-card 
+{ 
+position: absolute; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+border-top: none; 
+border-left: none; 
+border: 1px solid ; 
+transform: rotate(45deg); 
+font-size: 40px; 
+width: 300px; 
+height: 300px;
+font-size: 15px; 
+color: #40DBA5; 
+transition: all 1s; 
+background-color: rgb(255, 0, 0); 
+} 
+.background-card:before, .background-card:after { 
+position:absolute; 
+content: ' '; 
+border-radius: 300px 0 0 300px; 
+border-radius: 300px 0 0 300px; 
+width: 300px; 
+height: 300px; 
+border: solid 1px ; 
+border-right: none; 
+left: -300px; 
+background-color: rgb(255, 0, 0); 
+} 
+.background-card:after { 
+position: absolute; 
+left: -0px; 
+top: -300px; 
+transform: rotate(90deg); 
+} 
+.foreground-card:before, .foreground-card:after { 
+position:absolute; 
+content: ' '; 
+border-radius: 300px 0 0 300px; 
+border-radius: 300px 0 0 300px; 
+width: 300px; 
+height: 300px; 
+border: solid 1px ; 
+border-right: none; 
+left: -300px; 
+background-color: rgb(255, 0, 0); 
+} 
+.foreground-card:after { position: absolute; 
+left: -0px; 
+top: -300px; 
+transform: rotate(90deg); 
+} 
+
+.foreground-card { 
+transform: rotate(45deg); 
+display: flex; 
+position: absolute; 
+justify-content: center; 
+align-items: center; 
+border-top: none; 
+border-left: none; 
+transform: rotate(45deg); 
+border: 1px solid ; 
+width: 300px; 
+height: 300px; 
+font-size: 40px; 
+color: #40DBA5; 
+transition: all 1s; 
+background-color: rgb(255, 0, 0); 
+} 
+.invisible { 
+opacity: 0; 
+} 
+.out { 
+transform: 
+translate(50%, 0px) 
+scale(0.05, 1); 
+} 
+
+</style> 
+</head> 
+<body> 
+<div class="postcard"> 
+<div class="background-card invisible"> 
+Любви и счястья твоему дому<br/>     ❤
+</div> 
+<div class="foreground-card"> 
+С днем всех<br/> Влюблённых!
+</div> 
+</div> 
+<script> 
+const postcard = document.querySelector(".postcard") 
+const bgCard = document.querySelector(".background-card"); 
+const fgCard = document.querySelector(".foreground-card"); 
+
+postcard.onclick = () => { 
+console.log('fg pressed'); 
+if (fgCard.classList.contains('out')) { 
+fgCard.classList.remove('out') 
+} else { 
+bgCard.classList.remove('invisible') 
+fgCard.classList.add('out') 
+} 
+} 
+</script> 
+</body> 
+</html>
